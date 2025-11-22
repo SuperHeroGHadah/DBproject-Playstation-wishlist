@@ -1,0 +1,92 @@
+[
+  {
+    "_id": { "$oid": "673400000000000000000001" },
+    "userId": { "$oid": "673100000000000000000001" },
+    "gameId": { "$oid": "673200000000000000000001" },
+    "rating": 5,
+    "title": "Epic and emotional",
+    "body": "One of the best PS5 experiences.",
+    "createdAt": "2025-01-20T10:00:00Z"
+  },
+  {
+    "_id": { "$oid": "673400000000000000000002" },
+    "userId": { "$oid": "673100000000000000000002" },
+    "gameId": { "$oid": "673200000000000000000002" },
+    "rating": 4,
+    "title": "Amazing visuals",
+    "body": "Short story but beautiful gameplay.",
+    "createdAt": "2025-01-21T11:00:00Z"
+  },
+  {
+    "_id": { "$oid": "673400000000000000000003" },
+    "userId": { "$oid": "673100000000000000000003" },
+    "gameId": { "$oid": "673200000000000000000003" },
+    "rating": 5,
+    "title": "Masterpiece",
+    "body": "Emotional and unforgettable.",
+    "createdAt": "2025-01-22T12:00:00Z"
+  },
+  {
+    "_id": { "$oid": "673400000000000000000004" },
+    "userId": { "$oid": "673100000000000000000004" },
+    "gameId": { "$oid": "673200000000000000000004" },
+    "rating": 4,
+    "title": "Great worldbuilding",
+    "body": "Very immersive with great combat.",
+    "createdAt": "2025-01-23T13:00:00Z"
+  },
+  {
+    "_id": { "$oid": "673400000000000000000005" },
+    "userId": { "$oid": "673100000000000000000005" },
+    "gameId": { "$oid": "673200000000000000000005" },
+    "rating": 5,
+    "title": "Incredible depth",
+    "body": "A near-perfect RPG experience.",
+    "createdAt": "2025-01-24T14:00:00Z"
+  },
+  {
+    "_id": { "$oid": "673400000000000000000006" },
+    "userId": { "$oid": "673100000000000000000006" },
+    "gameId": { "$oid": "673200000000000000000006" },
+    "rating": 5,
+    "title": "Beautiful game",
+    "body": "Visually stunning and fun.",
+    "createdAt": "2025-01-25T15:00:00Z"
+  },
+  {
+    "_id": { "$oid": "673400000000000000000007" },
+    "userId": { "$oid": "673100000000000000000007" },
+    "gameId": { "$oid": "673200000000000000000007" },
+    "rating": 4,
+    "title": "Good racing game",
+    "body": "Solid mechanics and great cars.",
+    "createdAt": "2025-01-26T16:00:00Z"
+  },
+  {
+    "_id": { "$oid": "673400000000000000000008" },
+    "userId": { "$oid": "673100000000000000000008" },
+    "gameId": { "$oid": "673200000000000000000008" },
+    "rating": 5,
+    "title": "Dark and brutal",
+    "body": "One of FromSoftware’s best.",
+    "createdAt": "2025-01-27T17:00:00Z"
+  },
+  {
+    "_id": { "$oid": "673400000000000000000009" },
+    "userId": { "$oid": "673100000000000000000009" },
+    "gameId": { "$oid": "673200000000000000000009" },
+    "rating": 4,
+    "title": "Terrifying fun",
+    "body": "Great remake with tight gameplay.",
+    "createdAt": "2025-01-28T18:00:00Z"
+  },
+  {
+    "_id": { "$oid": "673400000000000000000010" },
+    "userId": { "$oid": "673100000000000000000010" },
+    "gameId": { "$oid": "673200000000000000000010" },
+    "rating": 4,
+    "title": "Solid RPG",
+    "body": "Good story and characters.",
+    "createdAt": "2025-01-29T19:00:00Z"
+  }
+]

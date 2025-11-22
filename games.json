@@ -1,0 +1,102 @@
+[
+  {
+    "_id": { "$oid": "673200000000000000000001" },
+    "title": "God of War Ragnarok",
+    "platform": "PS5",
+    "genres": ["Action", "Adventure"],
+    "releaseDate": "2022-11-09",
+    "publisher": "Sony",
+    "avgRating": 4.9,
+    "totalReviews": 1200
+  },
+  {
+    "_id": { "$oid": "673200000000000000000002" },
+    "title": "Spider-Man 2",
+    "platform": "PS5",
+    "genres": ["Action"],
+    "releaseDate": "2023-10-20",
+    "publisher": "Insomniac Games",
+    "avgRating": 4.8,
+    "totalReviews": 1100
+  },
+  {
+    "_id": { "$oid": "673200000000000000000003" },
+    "title": "The Last of Us Part II",
+    "platform": "PS4",
+    "genres": ["Drama", "Survival"],
+    "releaseDate": "2020-06-19",
+    "publisher": "Naughty Dog",
+    "avgRating": 4.6,
+    "totalReviews": 3000
+  },
+  {
+    "_id": { "$oid": "673200000000000000000004" },
+    "title": "Horizon Forbidden West",
+    "platform": "PS5",
+    "genres": ["Action", "RPG"],
+    "releaseDate": "2022-02-18",
+    "publisher": "Guerrilla Games",
+    "avgRating": 4.7,
+    "totalReviews": 1400
+  },
+  {
+    "_id": { "$oid": "673200000000000000000005" },
+    "title": "Elden Ring",
+    "platform": "PS5",
+    "genres": ["RPG", "Fantasy"],
+    "releaseDate": "2022-02-25",
+    "publisher": "FromSoftware",
+    "avgRating": 5.0,
+    "totalReviews": 5000
+  },
+  {
+    "_id": { "$oid": "673200000000000000000006" },
+    "title": "Ghost of Tsushima",
+    "platform": "PS4",
+    "genres": ["Adventure"],
+    "releaseDate": "2020-07-17",
+    "publisher": "Sucker Punch",
+    "avgRating": 4.9,
+    "totalReviews": 2800
+  },
+  {
+    "_id": { "$oid": "673200000000000000000007" },
+    "title": "Gran Turismo 7",
+    "platform": "PS5",
+    "genres": ["Racing"],
+    "releaseDate": "2022-03-04",
+    "publisher": "Polyphony Digital",
+    "avgRating": 4.3,
+    "totalReviews": 900
+  },
+  {
+    "_id": { "$oid": "673200000000000000000008" },
+    "title": "Bloodborne",
+    "platform": "PS4",
+    "genres": ["RPG", "Horror"],
+    "releaseDate": "2015-03-24",
+    "publisher": "FromSoftware",
+    "avgRating": 4.8,
+    "totalReviews": 4000
+  },
+  {
+    "_id": { "$oid": "673200000000000000000009" },
+    "title": "Resident Evil 4 Remake",
+    "platform": "PS5",
+    "genres": ["Horror"],
+    "releaseDate": "2023-03-24",
+    "publisher": "Capcom",
+    "avgRating": 4.7,
+    "totalReviews": 1500
+  },
+  {
+    "_id": { "$oid": "673200000000000000000010" },
+    "title": "Final Fantasy XVI",
+    "platform": "PS5",
+    "genres": ["RPG"],
+    "releaseDate": "2023-06-22",
+    "publisher": "Square Enix",
+    "avgRating": 4.5,
+    "totalReviews": 1700
+  }
+]

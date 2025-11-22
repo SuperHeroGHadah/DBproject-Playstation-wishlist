@@ -1,0 +1,92 @@
+[
+  {
+    "_id": { "$oid": "673100000000000000000001" },
+    "username": "gamer1",
+    "email": "gamer1@example.com",
+    "passwordHash": "hash1",
+    "role": "user",
+    "createdAt": "2025-01-01T10:00:00Z",
+    "country": "UAE"
+  },
+  {
+    "_id": { "$oid": "673100000000000000000002" },
+    "username": "gamer2",
+    "email": "gamer2@example.com",
+    "passwordHash": "hash2",
+    "role": "user",
+    "createdAt": "2025-01-02T11:00:00Z",
+    "country": "USA"
+  },
+  {
+    "_id": { "$oid": "673100000000000000000003" },
+    "username": "gamer3",
+    "email": "gamer3@example.com",
+    "passwordHash": "hash3",
+    "role": "user",
+    "createdAt": "2025-01-03T12:00:00Z",
+    "country": "Canada"
+  },
+  {
+    "_id": { "$oid": "673100000000000000000004" },
+    "username": "gamer4",
+    "email": "gamer4@example.com",
+    "passwordHash": "hash4",
+    "role": "user",
+    "createdAt": "2025-01-04T13:00:00Z",
+    "country": "UK"
+  },
+  {
+    "_id": { "$oid": "673100000000000000000005" },
+    "username": "gamer5",
+    "email": "gamer5@example.com",
+    "passwordHash": "hash5",
+    "role": "admin",
+    "createdAt": "2025-01-05T14:00:00Z",
+    "country": "Germany"
+  },
+  {
+    "_id": { "$oid": "673100000000000000000006" },
+    "username": "gamer6",
+    "email": "gamer6@example.com",
+    "passwordHash": "hash6",
+    "role": "user",
+    "createdAt": "2025-01-06T15:00:00Z",
+    "country": "Japan"
+  },
+  {
+    "_id": { "$oid": "673100000000000000000007" },
+    "username": "gamer7",
+    "email": "gamer7@example.com",
+    "passwordHash": "hash7",
+    "role": "user",
+    "createdAt": "2025-01-07T16:00:00Z",
+    "country": "Brazil"
+  },
+  {
+    "_id": { "$oid": "673100000000000000000008" },
+    "username": "gamer8",
+    "email": "gamer8@example.com",
+    "passwordHash": "hash8",
+    "role": "user",
+    "createdAt": "2025-01-08T17:00:00Z",
+    "country": "Spain"
+  },
+  {
+    "_id": { "$oid": "673100000000000000000009" },
+    "username": "gamer9",
+    "email": "gamer9@example.com",
+    "passwordHash": "hash9",
+    "role": "user",
+    "createdAt": "2025-01-09T18:00:00Z",
+    "country": "India"
+  },
+  {
+    "_id": { "$oid": "673100000000000000000010" },
+    "username": "gamer10",
+    "email": "gamer10@example.com",
+    "passwordHash": "hash10",
+    "role": "user",
+    "createdAt": "2025-01-10T19:00:00Z",
+    "country": "France"
+  }
+]

@@ -1,0 +1,924 @@
+This script tests all critical API functionality
+Make sure your server is running on http://localhost:5000
+
+Press Enter to start testing...
+
+
+═══════════════════════════════════════════════════════════
+  SECTION 1: AUTHENTICATION & AUTHORIZATION
+═══════════════════════════════════════════════════════════
+
+Test 1: Register New User
+Expected: 201 - User created with token
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   534  100   392  100   142   3305   1197 --:--:-- --:--:-- --:--:--  4487
+{
+  "success": true,
+  "message": "User registered successfully",
+  "data": {
+    "user": {
+      "id": "692b5094d5a9b9e4822ba7ca",
+      "username": "testuser1764446356",
+      "email": "testuser1764446356@example.com",
+      "role": "user",
+      "country": "UAE"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmI1MDk0ZDVhOWI5ZTQ4MjJiYTdjYSIsImlhdCI6MTc2NDQ0NjM1NiwiZXhwIjoxNzY3MDM4MzU2fQ.tphYXGop9aPfOVlfQgXJ-wcmHunAb-j4_cgMwNP1xBM"
+  }
+}
+
+Press Enter to continue...
+
+Test 2: Create & Login as Regular User
+Expected: 200 - Login successful with token
+{
+  "success": true,
+  "message": "Login successful",
+  "data": {
+    "user": {
+      "id": "692b5096d5a9b9e4822ba7cf",
+      "username": "regularuser",
+      "email": "regularuser@example.com",
+      "role": "user",
+      "country": "UAE"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmI1MDk2ZDVhOWI5ZTQ4MjJiYTdjZiIsImlhdCI6MTc2NDQ0NjM1OCwiZXhwIjoxNzY3MDM4MzU4fQ.r2Odvr2Ht_uQvx2LSERLjw-GlP_YKADFQNp1OjIjx6Y"
+  }
+}
+
+✓ User Token saved
+
+Press Enter to continue...
+
+Test 3: Create & Login as Admin
+Expected: 200 - Admin login successful
+
+{
+  "success": true,
+  "message": "Login successful",
+  "data": {
+    "user": {
+      "id": "692b5098d5a9b9e4822ba7d5",
+      "username": "adminuser",
+      "email": "adminuser@example.com",
+      "role": "admin",
+      "country": "UAE"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmI1MDk4ZDVhOWI5ZTQ4MjJiYTdkNSIsImlhdCI6MTc2NDQ0NjM3MSwiZXhwIjoxNzY3MDM4MzcxfQ.1T4UKRtNHsCBV40arumNQISu1t4vCEuQ1QYe7CQC5aE"
+  }
+}
+
+✓ Admin Token saved
+
+Press Enter to continue...
+
+
+═══════════════════════════════════════════════════════════
+  SECTION 2: GAME OPERATIONS (Public Access)
+═══════════════════════════════════════════════════════════
+
+Test 4: Get All Games
+Expected: 200 - Returns all games
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2184  100  2184    0     0   102k      0 --:--:-- --:--:-- --:--:--  106k
+{
+  "success": true,
+  "count": 10,
+  "data": [
+    {
+      "_id": "673200000000000000000008",
+      "title": "Bloodborne",
+      "platform": "PS4",
+      "genres": [
+        "RPG",
+        "Horror"
+      ],
+      "releaseDate": "2015-03-24T00:00:00.000Z",
+      "publisher": "FromSoftware",
+      "avgRating": 4.8,
+      "totalReviews": 4000,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000005",
+      "title": "Elden Ring",
+      "platform": "PS5",
+      "genres": [
+        "RPG",
+        "Fantasy"
+      ],
+      "releaseDate": "2022-02-25T00:00:00.000Z",
+      "publisher": "FromSoftware",
+      "avgRating": 5,
+      "totalReviews": 5000,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000010",
+      "title": "Final Fantasy XVI",
+      "platform": "PS5",
+      "genres": [
+        "RPG"
+      ],
+      "releaseDate": "2023-06-22T00:00:00.000Z",
+      "publisher": "Square Enix",
+      "avgRating": 4.5,
+      "totalReviews": 1700,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000006",
+      "title": "Ghost of Tsushima",
+      "platform": "PS4",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2020-07-17T00:00:00.000Z",
+      "publisher": "Sucker Punch",
+      "avgRating": 4.9,
+      "totalReviews": 2800,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000001",
+      "title": "God of War Ragnarok",
+      "platform": "PS5",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2022-11-09T00:00:00.000Z",
+      "publisher": "Sony",
+      "avgRating": 4.9,
+      "totalReviews": 1200,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000007",
+      "title": "Gran Turismo 7",
+      "platform": "PS5",
+      "genres": [
+        "Racing"
+      ],
+      "releaseDate": "2022-03-04T00:00:00.000Z",
+      "publisher": "Polyphony Digital",
+      "avgRating": 4.3,
+      "totalReviews": 900,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000004",
+      "title": "Horizon Forbidden West",
+      "platform": "PS5",
+      "genres": [
+        "Action",
+        "RPG"
+      ],
+      "releaseDate": "2022-02-18T00:00:00.000Z",
+      "publisher": "Guerrilla Games",
+      "avgRating": 4.7,
+      "totalReviews": 1400,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000009",
+      "title": "Resident Evil 4 Remake",
+      "platform": "PS5",
+      "genres": [
+        "Horror"
+      ],
+      "releaseDate": "2023-03-24T00:00:00.000Z",
+      "publisher": "Capcom",
+      "avgRating": 4.7,
+      "totalReviews": 1500,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000002",
+      "title": "Spider-Man 2",
+      "platform": "PS5",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2023-10-20T00:00:00.000Z",
+      "publisher": "Insomniac Games",
+      "avgRating": 4.8,
+      "totalReviews": 1100,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000003",
+      "title": "The Last of Us Part II",
+      "platform": "PS4",
+      "genres": [
+        "Drama",
+        "Survival"
+      ],
+      "releaseDate": "2020-06-19T00:00:00.000Z",
+      "publisher": "Naughty Dog",
+      "avgRating": 4.6,
+      "totalReviews": 3000,
+      "__v": 0
+    }
+  ]
+}
+
+Press Enter to continue...
+
+Test 5: Search Games by Title
+Expected: 200 - Returns matching games
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   280  100   280    0     0  14297      0 --:--:-- --:--:-- --:--:-- 14736
+{
+  "success": true,
+  "count": 1,
+  "data": [
+    {
+      "_id": "673200000000000000000001",
+      "title": "God of War Ragnarok",
+      "platform": "PS5",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2022-11-09T00:00:00.000Z",
+      "publisher": "Sony",
+      "avgRating": 4.9,
+      "totalReviews": 1200,
+      "__v": 0,
+      "score": 1.3333333333333333
+    }
+  ]
+}
+
+Press Enter to continue...
+
+Test 6: Get Top Rated Games
+Expected: 200 - Top 5 games by rating
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1099  100  1099    0     0  60584      0 --:--:-- --:--:-- --:--:-- 61055
+{
+  "success": true,
+  "count": 5,
+  "data": [
+    {
+      "_id": "673200000000000000000005",
+      "title": "Elden Ring",
+      "platform": "PS5",
+      "genres": [
+        "RPG",
+        "Fantasy"
+      ],
+      "releaseDate": "2022-02-25T00:00:00.000Z",
+      "publisher": "FromSoftware",
+      "avgRating": 5,
+      "totalReviews": 5000,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000006",
+      "title": "Ghost of Tsushima",
+      "platform": "PS4",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2020-07-17T00:00:00.000Z",
+      "publisher": "Sucker Punch",
+      "avgRating": 4.9,
+      "totalReviews": 2800,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000001",
+      "title": "God of War Ragnarok",
+      "platform": "PS5",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2022-11-09T00:00:00.000Z",
+      "publisher": "Sony",
+      "avgRating": 4.9,
+      "totalReviews": 1200,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000008",
+      "title": "Bloodborne",
+      "platform": "PS4",
+      "genres": [
+        "RPG",
+        "Horror"
+      ],
+      "releaseDate": "2015-03-24T00:00:00.000Z",
+      "publisher": "FromSoftware",
+      "avgRating": 4.8,
+      "totalReviews": 4000,
+      "__v": 0
+    },
+    {
+      "_id": "673200000000000000000002",
+      "title": "Spider-Man 2",
+      "platform": "PS5",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2023-10-20T00:00:00.000Z",
+      "publisher": "Insomniac Games",
+      "avgRating": 4.8,
+      "totalReviews": 1100,
+      "__v": 0
+    }
+  ]
+}
+
+Press Enter to continue...
+
+Test 7: Admin Creates New Game
+Expected: 201 - Game created successfully
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   426  100   270  100   156   7715   4457 --:--:-- --:--:-- --:--:-- 12529
+{
+  "success": true,
+  "message": "Game created successfully",
+  "data": {
+    "title": "Returnal",
+    "platform": "PS5",
+    "genres": [
+      "Action",
+      "Roguelike"
+    ],
+    "releaseDate": "2021-04-30T00:00:00.000Z",
+    "publisher": "Housemarque",
+    "avgRating": 0,
+    "totalReviews": 0,
+    "_id": "692b50acd5a9b9e4822ba7df",
+    "__v": 0
+  }
+}
+
+Press Enter to continue...
+
+
+═══════════════════════════════════════════════════════════
+  SECTION 3: USER GAME LIST MANAGEMENT
+═══════════════════════════════════════════════════════════
+
+Test 8: Get My Game List
+Expected: 200 - Returns user's wishlist and played games
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   128  100   128    0     0   4861      0 --:--:-- --:--:-- --:--:--  4923
+{
+  "success": true,
+  "data": {
+    "_id": "692b5096d5a9b9e4822ba7d1",
+    "userId": "692b5096d5a9b9e4822ba7cf",
+    "wishlist": [],
+    "played": [],
+    "__v": 0
+  }
+}
+
+Press Enter to continue...
+
+Test 9: Add Game to Wishlist
+Expected: 200 - Game added to wishlist
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   416  100   370  100    46   6233    774 --:--:-- --:--:-- --:--:--  7050
+{
+  "success": true,
+  "message": "Game added to wishlist successfully",
+  "data": {
+    "_id": "692b5096d5a9b9e4822ba7d1",
+    "userId": "692b5096d5a9b9e4822ba7cf",
+    "wishlist": [
+      {
+        "gameId": {
+          "_id": "673200000000000000000005",
+          "title": "Elden Ring",
+          "platform": "PS5",
+          "genres": [
+            "RPG",
+            "Fantasy"
+          ],
+          "avgRating": 5
+        },
+        "addedAt": "2025-11-29T19:59:43.389Z",
+        "_id": "692b50afd5a9b9e4822ba7e6"
+      }
+    ],
+    "played": [],
+    "__v": 0
+  }
+}
+
+Press Enter to continue...
+
+Test 10: Mark Game as Played
+Expected: 200 - Game moved to played list
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   560  100   487  100    73   7813   1171 --:--:-- --:--:-- --:--:--  9032
+{
+  "success": true,
+  "message": "Game marked as played successfully",
+  "data": {
+    "_id": "692b5096d5a9b9e4822ba7d1",
+    "userId": "692b5096d5a9b9e4822ba7cf",
+    "wishlist": [
+      {
+        "gameId": "673200000000000000000005",
+        "addedAt": "2025-11-29T19:59:43.389Z",
+        "_id": "692b50afd5a9b9e4822ba7e6"
+      }
+    ],
+    "played": [
+      {
+        "gameId": {
+          "_id": "673200000000000000000009",
+          "title": "Resident Evil 4 Remake",
+          "platform": "PS5",
+          "genres": [
+            "Horror"
+          ],
+          "avgRating": 4.7
+        },
+        "completedAt": "2025-11-29T19:59:44.665Z",
+        "_id": "692b50b0d5a9b9e4822ba7f1"
+      }
+    ],
+    "__v": 0
+  }
+}
+
+Press Enter to continue...
+
+Test 11: Remove from Wishlist
+Expected: 200 - Game removed from wishlist
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   291  100   291    0     0   5105      0 --:--:-- --:--:-- --:--:--  5196
+{
+  "success": true,
+  "message": "Game removed from wishlist successfully",
+  "data": {
+    "_id": "692b5096d5a9b9e4822ba7d1",
+    "userId": "692b5096d5a9b9e4822ba7cf",
+    "wishlist": [],
+    "played": [
+      {
+        "gameId": "673200000000000000000009",
+        "completedAt": "2025-11-29T19:59:44.665Z",
+        "_id": "692b50b0d5a9b9e4822ba7f1"
+      }
+    ],
+    "__v": 0
+  }
+}
+
+Press Enter to continue...
+
+
+═══════════════════════════════════════════════════════════
+  SECTION 4: REVIEW MANAGEMENT
+═══════════════════════════════════════════════════════════
+
+Test 12: Create Review
+Expected: 201 - Review created, game rating updated
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   702  100   476  100   226   6204   2945 --:--:-- --:--:-- --:--:--  9116
+{
+  "success": true,
+  "message": "Review created successfully",
+  "data": {
+    "_id": "692b50b4d5a9b9e4822ba803",
+    "userId": {
+      "_id": "692b5096d5a9b9e4822ba7cf",
+      "username": "regularuser",
+      "country": "UAE"
+    },
+    "gameId": {
+      "_id": "673200000000000000000002",
+      "title": "Spider-Man 2",
+      "platform": "PS5"
+    },
+    "rating": 5,
+    "title": "Amazing web-slinging experience",
+    "body": "Spider-Man 2 delivers incredible gameplay with smooth web-swinging mechanics and an engaging story.",
+    "createdAt": "2025-11-29T19:59:48.311Z",
+    "__v": 0
+  }
+}
+
+Press Enter to continue...
+
+Test 13: Get Reviews for a Game
+Expected: 200 - Returns all reviews for the game
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   315  100   315    0     0  10578      0 --:--:-- --:--:-- --:--:-- 10862
+{
+  "success": true,
+  "count": 1,
+  "data": [
+    {
+      "_id": "673400000000000000000001",
+      "userId": {
+        "_id": "673100000000000000000001",
+        "username": "gamer1",
+        "country": "UAE"
+      },
+      "gameId": "673200000000000000000001",
+      "rating": 5,
+      "title": "Epic and emotional",
+      "body": "One of the best PS5 experiences.",
+      "createdAt": "2025-01-20T10:00:00.000Z",
+      "__v": 0
+    }
+  ]
+}
+
+Press Enter to continue...
+
+Test 14: Get My Reviews
+Expected: 200 - Returns all my reviews
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   415  100   415    0     0  13948      0 --:--:-- --:--:-- --:--:-- 14310
+{
+  "success": true,
+  "count": 1,
+  "data": [
+    {
+      "_id": "692b50b4d5a9b9e4822ba803",
+      "userId": "692b5096d5a9b9e4822ba7cf",
+      "gameId": {
+        "_id": "673200000000000000000002",
+        "title": "Spider-Man 2",
+        "platform": "PS5",
+        "avgRating": 4.5
+      },
+      "rating": 5,
+      "title": "Amazing web-slinging experience",
+      "body": "Spider-Man 2 delivers incredible gameplay with smooth web-swinging mechanics and an engaging story.",
+      "createdAt": "2025-11-29T19:59:48.311Z",
+      "__v": 0
+    }
+  ]
+}
+
+Press Enter to continue...
+
+Test 15: Update Own Review
+Expected: 200 - Review updated successfully
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   630  100   461  100   169   7382   2706 --:--:-- --:--:-- --:--:-- 10161
+{
+  "success": true,
+  "message": "Review updated successfully",
+  "data": {
+    "_id": "692b50b4d5a9b9e4822ba803",
+    "userId": {
+      "_id": "692b5096d5a9b9e4822ba7cf",
+      "username": "regularuser",
+      "country": "UAE"
+    },
+    "gameId": {
+      "_id": "673200000000000000000002",
+      "title": "Spider-Man 2",
+      "platform": "PS5"
+    },
+    "rating": 4,
+    "title": "Amazing web-slinging experience - Updated",
+    "body": "Still incredible but with some minor pacing issues in the middle sections.",
+    "createdAt": "2025-11-29T19:59:48.311Z",
+    "__v": 0
+  }
+}
+
+Press Enter to continue...
+
+
+═══════════════════════════════════════════════════════════
+  SECTION 5: ACTIVITY LOGS
+═══════════════════════════════════════════════════════════
+
+Test 16: Get My Activity Logs
+Expected: 200 - Returns user's activity history
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1365  100  1365    0     0  43413      0 --:--:-- --:--:-- --:--:-- 44032
+{
+  "success": true,
+  "count": 5,
+  "data": [
+    {
+      "_id": "692b50bad5a9b9e4822ba81a",
+      "userId": "692b5096d5a9b9e4822ba7cf",
+      "gameId": {
+        "_id": "673200000000000000000002",
+        "title": "Spider-Man 2",
+        "platform": "PS5"
+      },
+      "action": "review_updated",
+      "meta": {
+        "rating": 4,
+        "reviewId": "692b50b4d5a9b9e4822ba803"
+      },
+      "timestamp": "2025-11-29T19:59:54.829Z",
+      "__v": 0
+    },
+    {
+      "_id": "692b50b4d5a9b9e4822ba805",
+      "userId": "692b5096d5a9b9e4822ba7cf",
+      "gameId": {
+        "_id": "673200000000000000000002",
+        "title": "Spider-Man 2",
+        "platform": "PS5"
+      },
+      "action": "review_submitted",
+      "meta": {
+        "rating": 5,
+        "reviewId": "692b50b4d5a9b9e4822ba803"
+      },
+      "timestamp": "2025-11-29T19:59:48.317Z",
+      "__v": 0
+    },
+    {
+      "_id": "692b50b2d5a9b9e4822ba7fe",
+      "userId": "692b5096d5a9b9e4822ba7cf",
+      "gameId": {
+        "_id": "673200000000000000000005",
+        "title": "Elden Ring",
+        "platform": "PS5"
+      },
+      "action": "removed_from_wishlist",
+      "timestamp": "2025-11-29T19:59:46.161Z",
+      "__v": 0
+    },
+    {
+      "_id": "692b50b0d5a9b9e4822ba7f6",
+      "userId": "692b5096d5a9b9e4822ba7cf",
+      "gameId": {
+        "_id": "673200000000000000000009",
+        "title": "Resident Evil 4 Remake",
+        "platform": "PS5"
+      },
+      "action": "marked_as_played",
+      "meta": {
+        "completionHours": 25
+      },
+      "timestamp": "2025-11-29T19:59:44.678Z",
+      "__v": 0
+    },
+    {
+      "_id": "692b50afd5a9b9e4822ba7ea",
+      "userId": "692b5096d5a9b9e4822ba7cf",
+      "gameId": {
+        "_id": "673200000000000000000005",
+        "title": "Elden Ring",
+        "platform": "PS5"
+      },
+      "action": "added_to_wishlist",
+      "meta": {
+        "source": "web"
+      },
+      "timestamp": "2025-11-29T19:59:43.405Z",
+      "__v": 0
+    }
+  ]
+}
+
+Press Enter to continue...
+
+Test 17: Get Activity Statistics
+Expected: 200 - Returns breakdown by action type
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   551  100   551    0     0  12283      0 --:--:-- --:--:-- --:--:-- 12244
+{
+  "success": true,
+  "data": {
+    "totalActivities": 5,
+    "breakdown": [
+      {
+        "_id": "review_updated",
+        "count": 1
+      },
+      {
+        "_id": "review_submitted",
+        "count": 1
+      },
+      {
+        "_id": "removed_from_wishlist",
+        "count": 1
+      },
+      {
+        "_id": "marked_as_played",
+        "count": 1
+      },
+      {
+        "_id": "added_to_wishlist",
+        "count": 1
+      }
+    ],
+    "recentActivity": {
+      "_id": "692b50bad5a9b9e4822ba81a",
+      "userId": "692b5096d5a9b9e4822ba7cf",
+      "gameId": {
+        "_id": "673200000000000000000002",
+        "title": "Spider-Man 2",
+        "platform": "PS5"
+      },
+      "action": "review_updated",
+      "meta": {
+        "rating": 4,
+        "reviewId": "692b50b4d5a9b9e4822ba803"
+      },
+      "timestamp": "2025-11-29T19:59:54.829Z",
+      "__v": 0
+    }
+  }
+}
+
+Press Enter to continue...
+
+
+═══════════════════════════════════════════════════════════
+  SECTION 6: SECURITY - RBAC & VALIDATION
+═══════════════════════════════════════════════════════════
+
+Test 18: Admin - Get All Users
+Expected: 200 - Returns all users (Admin only)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2191  100  2191    0     0  91696      0 --:--:-- --:--:-- --:--:-- 95260
+{
+  "success": true,
+  "count": 13,
+  "data": [
+    {
+      "_id": "673100000000000000000001",
+      "username": "gamer1",
+      "email": "gamer1@example.com",
+      "role": "user",
+      "country": "UAE",
+      "createdAt": "2025-01-01T10:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "673100000000000000000002",
+      "username": "gamer2",
+      "email": "gamer2@example.com",
+      "role": "user",
+      "country": "USA",
+      "createdAt": "2025-01-02T11:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "673100000000000000000003",
+      "username": "gamer3",
+      "email": "gamer3@example.com",
+      "role": "user",
+      "country": "Canada",
+      "createdAt": "2025-01-03T12:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "673100000000000000000004",
+      "username": "gamer4",
+      "email": "gamer4@example.com",
+      "role": "user",
+      "country": "UK",
+      "createdAt": "2025-01-04T13:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "673100000000000000000005",
+      "username": "gamer5",
+      "email": "gamer5@example.com",
+      "role": "admin",
+      "country": "Germany",
+      "createdAt": "2025-01-05T14:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "673100000000000000000006",
+      "username": "gamer6",
+      "email": "gamer6@example.com",
+      "role": "user",
+      "country": "Japan",
+      "createdAt": "2025-01-06T15:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "673100000000000000000007",
+      "username": "gamer7",
+      "email": "gamer7@example.com",
+      "role": "user",
+      "country": "Brazil",
+      "createdAt": "2025-01-07T16:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "673100000000000000000008",
+      "username": "gamer8",
+      "email": "gamer8@example.com",
+      "role": "user",
+      "country": "Spain",
+      "createdAt": "2025-01-08T17:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "673100000000000000000009",
+      "username": "gamer9",
+      "email": "gamer9@example.com",
+      "role": "user",
+      "country": "India",
+      "createdAt": "2025-01-09T18:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "673100000000000000000010",
+      "username": "gamer10",
+      "email": "gamer10@example.com",
+      "role": "user",
+      "country": "France",
+      "createdAt": "2025-01-10T19:00:00.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "692b5094d5a9b9e4822ba7ca",
+      "username": "testuser1764446356",
+      "email": "testuser1764446356@example.com",
+      "role": "user",
+      "country": "UAE",
+      "createdAt": "2025-11-29T19:59:16.316Z",
+      "__v": 0
+    },
+    {
+      "_id": "692b5096d5a9b9e4822ba7cf",
+      "username": "regularuser",
+      "email": "regularuser@example.com",
+      "role": "user",
+      "country": "UAE",
+      "createdAt": "2025-11-29T19:59:18.309Z",
+      "__v": 0
+    },
+    {
+      "_id": "692b5098d5a9b9e4822ba7d5",
+      "username": "adminuser",
+      "email": "adminuser@example.com",
+      "role": "admin",
+      "country": "UAE",
+      "createdAt": "2025-11-29T19:59:20.459Z",
+      "__v": 0
+    }
+  ]
+}
+
+Press Enter to continue...
+
+Test 19: Regular User Tries Admin Endpoint
+Expected: 403 - Access denied (RBAC)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    85  100    85    0     0   4289      0 --:--:-- --:--:-- --:--:--  4473
+{
+  "success": false,
+  "message": "User role 'user' is not authorized to access this route"
+}
+
+Press Enter to continue...
+
+Test 20: Create Review with Invalid Data
+Expected: 400 - Validation errors returned
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   298  100   195  100   103  10467   5529 --:--:-- --:--:-- --:--:-- 16555
+{
+  "success": false,
+  "errors": [
+    {
+      "message": "Rating must be between 1 and 5"
+    },
+    {
+      "message": "Title must be between 3 and 100 characters"
+    },
+    {
+      "message": "Review body must be between 10 and 1000 characters"
+    }
+  ]
+}
+
+Press Enter to continue...
+

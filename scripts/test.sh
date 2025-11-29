@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# PlayStation Wishlist API - Essential Test Suite
-# Streamlined version with key tests only
-
-# Colors for output
+# colors for output
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 RED='\033[0;31m'
@@ -34,19 +31,6 @@ pause_test() {
   echo -e "\n${YELLOW}Press Enter to continue...${NC}"
   read
 }
-
-# Start testing
-clear
-echo -e "${BLUE}"
-cat <<"EOF"
-╔═══════════════════════════════════════════════════════════╗
-║                                                           ║
-║     PlayStation Wishlist API - Essential Test Suite      ║
-║                  (20 Key Tests)                          ║
-║                                                           ║
-╚═══════════════════════════════════════════════════════════╝
-EOF
-echo -e "${NC}\n"
 
 echo -e "${YELLOW}This script tests all critical API functionality${NC}"
 echo -e "${YELLOW}Make sure your server is running on http://localhost:5000${NC}\n"
@@ -107,10 +91,10 @@ curl -s -X POST $BASE_URL/auth/register \
     "country": "UAE"
   }' >/dev/null 2>&1
 
-# Manually update the user to admin role in MongoDB
-echo -e "${YELLOW}Note: You need to manually set this user as admin in MongoDB${NC}"
-echo -e "${YELLOW}Run: db.users.updateOne({email: 'adminuser@example.com'}, {\$set: {role: 'admin'}})${NC}"
-echo -e "${YELLOW}Press Enter after updating...${NC}"
+# Manually update the user to admin role in MongoDB, Mongoose cant help with this unfortunately
+#echo -e "${YELLOW}Note: You need to manually set this user as admin in MongoDB${NC}"
+#echo -e "${YELLOW}Run: db.users.updateOne({email: 'adminuser@example.com'}, {$set: {role: 'admin'}})${NC}"
+#echo -e "${YELLOW}Press Enter after updating...${NC}"
 read
 
 # Now login as admin
@@ -310,4 +294,3 @@ echo -e "  • Transaction Management (Reviews update game ratings)"
 echo -e "  • Activity Logging"
 echo -e "  • Input Validation"
 echo -e "  • Concurrency (Wishlist operations)"
-echo -e "\n${YELLOW}Perfect for your academic report! 📚${NC}\n"
